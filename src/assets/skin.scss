@@ -1,0 +1,268 @@
+html {
+	font-size: 10px;
+}
+
+@media screen and (min-width:321px) and (max-width:374px) {
+	html {
+		font-size: 11px;
+	}
+}
+
+@media screen and (min-width:375px) and (max-width:414px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+@media screen and (min-width:415px) and (max-width:639px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+@media screen and (min-width:640px) and (max-width:719px) {
+	html {
+		font-size: 20px;
+	}
+}
+
+@media screen and (min-width:720px) and (max-width:749px) {
+	html {
+		font-size: 22.5px;
+	}
+}
+
+@media screen and (min-width:750px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+$red:#388738; //默认红色
+$gary:#dbdbdb; //按钮无法点击灰色
+$garyFont:#c2c2c2; //按钮无法点击灰色文字
+$pink:#FFF8F8;
+$pinkLine:#EED9D9; //新手指引页的底色
+$spanPink:#FF5A58; // 新手指引标题分类两边菱形的颜色
+$navBorderBottom:#f09e38; //导航下border颜色
+$packetColor:#FD5B57; // 红包列表低色
+$aLink:#47a5e7; //重置密码a链接颜色
+$white:#fff; // 白色
+$black:#000; // 黑色
+$yellow:#f09e38; // 黄色
+$blue:#033b88; // 蓝色
+$fontgary:#a5a5a5; // 字体颜色
+$ft-1b2b3f:#1b2b3f; // 字体颜色
+$ft-999:#999; // 字体颜色
+$ft-666:#666; // 字体颜色
+$ft-333:#333;
+$ft-dedede:#dedede; // 边框颜色
+$borderShallow: #ebebeb; //  边框颜色-较浅
+$background:#f8f8f8; // 页面背景颜色
+$graycolor:#c5c5c5;
+$uiWidth:375px; //设计稿的一半
+$img:100%;
+$e1:#e1e1e1;
+$eabac0:#eabac0;
+$packetRed:#cd3630; //红包选择弹框字体颜色
+$packetIcon:#fe0030; //红包选择弹框icon
+$c-009cff:#009cff;
+$c-00a3fa:#00a3fa;
+$c-00b3ee:#00b3ee;
+$c-00c0ff:#00c0ff;
+$c-ddd:#ddd;
+$c-ff6d00:#ff6d00; // 价格颜色
+$c-f5f5f5:#f5f5f5;
+$c-999:#999;
+$c-ccc:#ccc;
+$c-ff000:#FF0000;
+$c-0090ff:#0090ff;
+$c-f4faff:#f4faff;
+$c-f5faff:#f5faff;
+$bo7: rgba(0, 0, 0, .7); // 黑色70%透明度
+//付款通用页面颜色
+$c-blue:#0000ff;
+$border:#797979;
+$bgc:#00beff;
+$c-009dff:#009dff;
+$border-shadow:#eaeaea;
+$baseFontSize:11;
+$baseWidth:750;
+@function pxToRem($px) {
+	@return $px/12/2+rem;
+}
+
+@mixin btn {
+	//按钮
+	width: 94%;
+	margin: pxToRem(40) auto;
+	height: pxToRem(80);
+	line-height: pxToRem(80);
+	border: 0;
+	display: block;
+	color: $white;
+	background: $red;
+	font-size: pxToRem(32);
+	text-align: center;
+}
+
+@mixin btn-bottom {
+	//底部按钮
+	@include btn;
+	position: absolute;
+	left: 3%;
+	bottom: pxToRem(20);
+}
+
+//设置百分比
+@function percent($val, $width) {
+	@return ($val/$width)*100%;
+}
+
+@mixin ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@mixin common-gradient {
+	background: linear-gradient(to left, $c-009cff, $c-00c0ff);
+}
+
+/* 登录&&完成&&注册按钮样式 */
+
+@mixin common-btn-login {
+	display: block;
+	width: 80%;
+	height: pxToRem(70);
+	line-height: pxToRem(70);
+	margin: pxToRem(64) auto pxToRem(44);
+	font-size: pxToRem(28);
+	color: $white;
+	border-radius: pxToRem(35);
+	@include common-gradient();
+	box-shadow: 0 pxToRem(2) pxToRem(8) $c-00a3fa;
+}
+
+/* 注册&&登录&&重置密码 输入框样式 */
+
+@mixin common-sign {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin-top: pxToRem(22);
+	padding: pxToRem(30) 0 pxToRem(30) pxToRem(44);
+	border-bottom: pxToRem(2) #ebebeb solid;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 2%;
+		width: pxToRem(8);
+		height: pxToRem(8);
+		background: $c-009cff;
+		border-radius: 50%;
+		transform: translateY(-50%);
+	}
+	input {
+		width: 100%;
+		height: pxToRem(56);
+		line-height: pxToRem(56);
+	}
+	.del {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		z-index: 100;
+		text-align: center;
+		font-size: pxToRem(40);
+		transform: translateY(-50%);
+		cursor: pointer;
+	}
+	.showPassword {
+		position: absolute;
+		top: 54%;
+		right: pxToRem(60);
+		font-size: pxToRem(2);
+		transform: translateY(-50%);
+	}
+}
+
+/* logo样式 */
+
+@mixin common-logo {
+	padding: pxToRem(88) 0;
+	text-align: center;
+	&>img {
+		width: 30%;
+	}
+}
+
+/* 获取验证码按钮 */
+
+@mixin common-get-code {
+	position: relative;
+	.get-code-value,
+	.get-code-btn {
+		display: inline-block;
+		font-size: 0;
+	}
+	.get-code-value {
+		position: relative;
+		width: 76%;
+		font-size: pxToRem(24);
+		&>.del {
+			position: absolute;
+			top: 50%;
+			right: 10%;
+			transform: translateY(-50%);
+		}
+	}
+	.get-code-btn {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		width: 24%;
+		height: pxToRem(55);
+		line-height: pxToRem(55);
+		font-size: pxToRem(22);
+		color: $white;
+		border-radius: pxToRem(5);
+		@include common-gradient();
+		transform: translateY(-50%);
+	}
+}
+
+/* 禁止获取验证码按钮 */
+
+@mixin common-btn-disable {
+	background: $ft-dedede;
+	color: $white;
+	pointer-events: none;
+	box-shadow: none;
+}
+
+/* 公共边距 */
+
+@mixin common-padding {
+	padding-left: pxToRem(30);
+	padding-right: pxToRem(30);
+}
+
+@mixin arrow-right {
+	width: pxToRem(20);
+	height: pxToRem(20);
+	border-top: 1px solid $ft-999;
+	border-right: 1px solid $ft-999;
+}
+
+.price {
+	font-size: pxToRem(24);
+	color: $ft-666;
+	strong {
+		padding: 0 pxToRem(6);
+		font-size: pxToRem(36);
+		color: $c-ff6d00;
+		font-weight: normal;
+	}
+}

@@ -1,0 +1,58 @@
+@charset "UTF-8";
+html {
+  font-size: 10px;
+}
+
+@media screen and (min-width: 321px) and (max-width: 374px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 414px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 415px) and (max-width: 639px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 719px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 749px) {
+  html {
+    font-size: 22.5px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* 登录&&完成&&注册按钮样式 */
+/* 注册&&登录&&重置密码 输入框样式 */
+/* logo样式 */
+/* 获取验证码按钮 */
+/* 禁止获取验证码按钮 */
+/* 公共边距 */
+.price {
+  font-size: 1rem;
+  color: #666;
+}
+
+.price strong {
+  padding: 0 0.25rem;
+  font-size: 1.5rem;
+  color: #ff6d00;
+  font-weight: normal;
+}
